@@ -1,0 +1,20 @@
+# Один venv на оба процесса (api и bot).
+# Версии не пинятся намеренно: после успешной установки
+# зафиксируем реальные через `pip freeze > requirements.lock.txt`.
+
+# API
+fastapi
+uvicorn[standard]
+sqlmodel
+pydantic
+python-dotenv
+
+# Claude + MCP (хелперы для stdio-подключения к Playwright MCP)
+anthropic[mcp]
+
+# Telegram
+aiogram
+
+# HTTP-клиенты. Расширения socks нужны, если PROXY_URL окажется socks5://
+httpx[socks]
+aiohttp-socks
